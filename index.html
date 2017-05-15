@@ -15,7 +15,7 @@
             background-color: #ddd;
             border-radius: 10px;
             padding: 4px 8px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             box-shadow: 2px 2px 2px 2px #999;
         }
     </style>
@@ -36,6 +36,15 @@
         <header>
     <h2>Posts</h2>
 </header>
+<section>
+    <header>
+        <h3>This website <em>15th May 2017</em></h3>
+    </header>
+    <p>Rather than duplicate header/footer/style information, I've hand-rolled an inliner for the content. It&apos;s all about reinventing the wheel (and just blatently stealing the syntax for the "templating" from <a href="http://jinja.pocoo.org/docs/2.9/">Jinja2</a> in about an hour&apos;s effort.)</p>
+    <p>Check out this repository on my github, or just go to <a href="build">build</a> to grab the source.</p>
+    <p>I&apos;d rather do a proper <a href="http://flask.pocoo.org/">Flask</a> app and use something like <a href="http://pythonhosted.org/Frozen-Flask/">Frozen Flask</a> to generate these static pages.</p>
+    <p>This is basically satire, string.replace() does not a website generator make.</p>
+</section>
 
 <section>
     <header>
@@ -52,7 +61,7 @@
     <p>As I hadn&apos;t had coffee by this stage, I would sum up Regan&apos;s session as a brief introduction to some of the
         <abbr title="Infrastructure as a Service">IaaS</abbr> and <abbr title="Platform as a Service">PaaS</abbr> offerings
         on the Azure stack.</p>
-        <p>No idea what Azure is? <a href="whatsazure.html">Read my (tired) thoughts on Azure</a>.</p>
+    <p>No idea what Azure is? <a href="whatsazure.html">Read my (tired) thoughts on Azure</a>.</p>
     <p>Like most providers, I find pay-as-you-go is a big draw-card. There are some great solutions for networking, with off-the-internet
         solutions to integrate with existing on-premise machines. Regan provided a great introduction to this and answered
         every question thrown his way, he really piqued my interest in Azure. I do wish we&apos;d somehow had more time for
