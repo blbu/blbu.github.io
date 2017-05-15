@@ -1,0 +1,91 @@
+#!/bin/env python
+from os import listdir, getcwd
+
+# Hand-crafted artisanal content generator
+# Author: Blake Burgess
+# Date: 15 May 2017
+# License: WTFPL
+# Mood: Satirical
+# Purpose: To demonstrate how to over and under-engineer things at the same time.
+
+# "layout.html" should be your wrapper file, with one instance of the marker element (see below)
+LAYOUT = open("layout.html").read()
+
+# This will be replaced by the contents of your content files
+MARKER = "{{ layout }}"
+
+# marker-->content mappings
+lookup = {}
+
+def get_marker(s):
+    return "{{ " + s + " }}"
+
+def get_abbr(abbr, defn):
+    return '<abbr title="' + defn + '">' + abbr + '</abbr>'
+
+abbrs = {}
+abbrs_raw = open("abbrs.txt").readlines()
+for line in abbrs_raw:
+    pieces = line.split(":")
+    abbr, defn = pieces[0], ":".join(pieces).replace('\r\n', '')
+    defn = get_abbr(abbr, defn)
+    abbrs[abbr] = defn
+for abbr in abbrs:
+    lookup[get_marker(abbr)] = abbrs[abbr]
+
+# break out of content-inlining if we get too crazy.
+lookup_recursion_limit = 10
+
+# For each content file file[CONTENT_FILE_GLOB], a corresponding file[CONTENT_OUTPUT_PATTERN] will be written.
+# Note, neither the glob nor the output pattern are strictly suffixes..
+CONTENT_FILE_GLOB = ".src.html"
+
+# the string to replace CONTENT_FILE_GLOB with, once content-inlining has been performed.
+CONTENT_OUTPUT_PATTERN = ".html"
+
+# Get the content source files. Actually, just get all files. We'll sort it out later.
+# Not necessarily files. We'll just gag on directories which match CONTENT_FILE_GLOB ;).
+# cwd := "current working directory"
+files_in_cwd = listdir(getcwd())
+
+site_pages = []
+
+def apply(s, depth=10):
+    global lookup
+    if depth <= 0:
+        return s
+    for l in lookup:
+        if l in s:
+            s = s.replace(l, lookup[l])
+            s = apply(s, depth-1)
+    return s
+
+def embed(file_name):
+    content_contents = open(file_name).read()
+    content_contents = apply(content_contents)
+    embedded_content = LAYOUT.replace(MARKER, content_contents)
+    output_file_name = file_name.replace(CONTENT_FILE_GLOB, CONTENT_OUTPUT_PATTERN)
+    output_content_file = open(output_file_name, "w")
+    output_content_file.write(embedded_content)
+    output_content_file.close()
+
+for file_name in files_in_cwd:
+    if CONTENT_FILE_GLOB not in file_name:
+        continue
+    if file_name not in site_pages:
+        site_pages += [file_name.replace(CONTENT_FILE_GLOB, CONTENT_OUTPUT_PATTERN)]
+    embed(file_name)
+
+def get_sitemap():
+    global site_pages
+    s = "<ul>"
+    for page in site_pages:
+        s += '<li><a href="' + page + '">' + page + '</a></li>'
+    s += "</ul>"
+    return s
+
+lookup[get_marker("sitemap")] = get_sitemap()
+
+embed("sitemap.src.html")
+
+print site_pages

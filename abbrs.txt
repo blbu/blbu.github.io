@@ -1,0 +1,4 @@
+IaaS: Infrastructure as a Service
+PaaS: Platform as a Service
+VM: Virtual Machine
+Azure: Microsoft Azure
