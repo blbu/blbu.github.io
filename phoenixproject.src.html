@@ -1,82 +1,59 @@
-<header>
-    <h2>The Phoenix Project</h2>
-</header>
-<section>
-    <p>Here are my notes on The Phoenix Project. It&apos;s definitely more of a brain dump than an actual post, but I do enjoy referring to "types of work" and "the three ways" from time to time.</p>
-    <p>I would implement and aim for consistency for each "way" one-by-one, in-order.</p>
-    <p>For the "types of work", it can be helpful to tag incoming tasks to ensure they have the right prioritization. It can also be useful for historical discussion&mdash;e.g., to explain why a certain task was unactioned.</p>
-    <h4>The Four Types of Work</h4>
-    <h5>Business Projects</h5>
-    <p>There are business initiatives, of which most Development projects encompass. These typically reside in the Project Management
-        Office, which tracks all of the official projects in an organization.</p>
-    <h5>Internal IT Projects</h5>
-    <p>These include the infrastructure or IT Operations projects that business projects may create, as well as internally-generated
-        improvement projects (e.g., create new environment, automate deployment). Often these are not centrally tracked anywhere,
-        instead residing with the budget owners (e.g., database manager, storage manager, distributed systems manager).</p>
-    <p>This creates a problem when IT Operations is a bottleneck, because there is no easy way to find out how much of capacity
-        is already committed to internal projects.</p>
-    <h5>Changes</h5>
-    <p>There are often generated from the previous two types of work and are typically tracked in a ticketing system (e.g.,
-        Remedy for IT Operations, JIRA, or an Agile planning tool for Development). The fact that two systems exist to track
-        work flow for two different parts of the value stream can create problems, especially when handoffs are required.</p>
-    <p>Incidentally, in some dedicated teams that own both the feature development and service delivery responsibilities, all
-        work lives in the same system. This has some advantages, because operational incidents will show up in the backlog
-        and "in work", alongside feature defects and new feature functionality.</p>
-    <h5>Unplanned work or recovery work</h5>
-    <p>These include operational incidents and problems, often caused by the previous types of work and always come at the expense
-        of other planned work commitments.</p>
-    <h4>The Three Ways</h4>
-    <h5>The First Way</h5>
-    <p>The first way is about the left-to-right flow of work from Development to IT Operations to the customer.</p>
-    <p>In order to maximize flow, we need small batch sizes and intervals of work, never passing defects to down-stream work
-        centres, and to constantly optimize for the global goals (as opposed to local goals such as Dev feature completion
-        rates, Test find/fix ratios, or Ops availability measures).</p>
-    <p>The necessary practices include continuous build, integration, and deployment, creating environments on demand, limiting
-        work in progress, and building safe systems and organizations that are safe to change.</p>
-    <h5>The Second Way</h5>
-    <p>The second way is about the constant flow of fast feedback from right-to-left and at all stages of the value stream, amplifying
-        it to ensure that we can prevent problems from happening again, or enable faster detection and recovery. By doing
-        this, we create quality at the source, creating or embedding knowledge where we need it.</p>
-    <p>The necessary practices include "stopping the production line" when our builds and tests fail in the deployment pipeline;
-        constantly elevating the improvement of daily work over daily work; creating fast automated test suites to ensure
-        that code is always in a potentially deployable state; creating shared goals and shared pain between Development
-        and IT Operations; and creating pervasive production telemetry so that everyone can see whether code and environments
-        are operating as designed and that customer goals are being met.</p>
-    <h5>The Third Way</h5>
-    <p>The third way is about creating a culture that fosters two things: continual experimentation, which requires taking risks
-        and learning from success and failures, and understanding that repetition and practice is the prerequisite to mastery.</p>
-    <p>Experimentation and risk-taking are what enable us to relentlessly improve our system of work, which often requires us
-        to do things very differently than how we&apos;ve done it for decades. And when things go wrong, our constant repetition
-        and daily practice is what allows us to have the skills and habits that enable us to retreat back to a place of safety
-        and resume normal operations.</p>
-    <p>The necessary practices include creating a culture of innovation and risk-tasking (as opposed to fear or mindless order-taking)
-        and high trust (as opposed to low trust, command-and-control), allocating at least twenty percent of Development
-        and IT Operations cycles towards non-functional requirements, and constant reinforcement and that improvements are
-        encourages and celebrated.</p>
-    <h4>DevOps Myths</h4>
-    <ul>
-        <li>DevOps replaces Agile</li>
-        <li>DevOps replaces ITIL</li>
-        <li>DevOps means No-Ops</li>
-        <li>DevOps is only for open source software</li>
-        <li>DevOps is just "infrastructure as code" or automation</li>
-        <li>DevOps is only for start-ups and unicorns</li>
-    </ul>
-    <h4>Five original Theory of Constraints steps</h4>
-    <p>This part is taken from <em>The Goal&mdash;Dr Goldratt (Theory of Constraints)</em></p>
-    <ul>
-        <li>Identify the constraint</li>
-        <li>Exploit the constraint</li>
-        <li>Subordinate all other activities to the constraint</li>
-        <li>Elevate the constraint to new levels</li>
-        <li>Find the next constraint</li>
-    </ul>
-    <h5>Wait Time</h5>
-    <p>Wait time refers to how long we need to wait for access to a resource.</p>
-    <ul>
-        <li>If a resource is 50% busy, 50% idle, its wait time is 50/50 = 1 unit.</li>
-        <li>If a resource is 90% busy, 10% idle, its wait time is 90/10 = 9 units.</li>
-    </ul>
-    <p>So we can see resource usage is a power curve. Wait time increases exponentially as utilization increases.</p>
-    <p>Multiple handoffs? Multiply the wait times. 3 resources at 90%&mdash;27 units.</p>
-</section>
+<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+        <h2 class="mdl-card__title-text">The Phoenix Project</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        <p>Here are my notes on The Phoenix Project. It&apos;s definitely more of a brain dump than an actual post, but I do enjoy referring to "types of work" and "the three ways" from time to time.</p>
+        <p>I would implement and aim for consistency for each "way" one-by-one, in-order.</p>
+        <p>For the "types of work", it can be helpful to tag incoming tasks to ensure they have the right prioritization. It can also be useful for historical discussion&mdash;e.g., to explain why a certain task was unactioned.</p>
+        <h4>The Four Types of Work</h4>
+        <h5>Business Projects</h5>
+        <p>There are business initiatives, of which most Development projects encompass. These typically reside in the Project Management Office, which tracks all of the official projects in an organization.</p>
+        <h5>Internal IT Projects</h5>
+        <p>These include the infrastructure or IT Operations projects that business projects may create, as well as internally-generated improvement projects (e.g., create new environment, automate deployment). Often these are not centrally tracked anywhere, instead residing with the budget owners (e.g., database manager, storage manager, distributed systems manager).</p>
+        <p>This creates a problem when IT Operations is a bottleneck, because there is no easy way to find out how much of capacity is already committed to internal projects.</p>
+        <h5>Changes</h5>
+        <p>There are often generated from the previous two types of work and are typically tracked in a ticketing system (e.g., Remedy for IT Operations, JIRA, or an Agile planning tool for Development). The fact that two systems exist to track work flow for two different parts of the value stream can create problems, especially when handoffs are required.</p>
+        <p>Incidentally, in some dedicated teams that own both the feature development and service delivery responsibilities, all work lives in the same system. This has some advantages, because operational incidents will show up in the backlog and "in work", alongside feature defects and new feature functionality.</p>
+        <h5>Unplanned work or recovery work</h5>
+        <p>These include operational incidents and problems, often caused by the previous types of work and always come at the expense of other planned work commitments.</p>
+        <h4>The Three Ways</h4>
+        <h5>The First Way</h5>
+        <p>The first way is about the left-to-right flow of work from Development to IT Operations to the customer.</p>
+        <p>In order to maximize flow, we need small batch sizes and intervals of work, never passing defects to down-stream work centres, and to constantly optimize for the global goals (as opposed to local goals such as Dev feature completion rates, Test find/fix ratios, or Ops availability measures).</p>
+        <p>The necessary practices include continuous build, integration, and deployment, creating environments on demand, limiting work in progress, and building safe systems and organizations that are safe to change.</p>
+        <h5>The Second Way</h5>
+        <p>The second way is about the constant flow of fast feedback from right-to-left and at all stages of the value stream, amplifying it to ensure that we can prevent problems from happening again, or enable faster detection and recovery. By doing this, we create quality at the source, creating or embedding knowledge where we need it.</p>
+        <p>The necessary practices include "stopping the production line" when our builds and tests fail in the deployment pipeline; constantly elevating the improvement of daily work over daily work; creating fast automated test suites to ensure that code is always in a potentially deployable state; creating shared goals and shared pain between Development and IT Operations; and creating pervasive production telemetry so that everyone can see whether code and environments are operating as designed and that customer goals are being met.</p>
+        <h5>The Third Way</h5>
+        <p>The third way is about creating a culture that fosters two things: continual experimentation, which requires taking risks and learning from success and failures, and understanding that repetition and practice is the prerequisite to mastery.</p>
+        <p>Experimentation and risk-taking are what enable us to relentlessly improve our system of work, which often requires us to do things very differently than how we&apos;ve done it for decades. And when things go wrong, our constant repetition and daily practice is what allows us to have the skills and habits that enable us to retreat back to a place of safety and resume normal operations.</p>
+        <p>The necessary practices include creating a culture of innovation and risk-tasking (as opposed to fear or mindless order-taking) and high trust (as opposed to low trust, command-and-control), allocating at least twenty percent of Development and IT Operations cycles towards non-functional requirements, and constant reinforcement and that improvements are encourages and celebrated.</p>
+        <h4>DevOps Myths</h4>
+        <ul>
+            <li>DevOps replaces Agile</li>
+            <li>DevOps replaces ITIL</li>
+            <li>DevOps means No-Ops</li>
+            <li>DevOps is only for open source software</li>
+            <li>DevOps is just "infrastructure as code" or automation</li>
+            <li>DevOps is only for start-ups and unicorns</li>
+        </ul>
+        <h4>Five original Theory of Constraints steps</h4>
+        <p>This part is taken from <em>The Goal&mdash;Dr Goldratt (Theory of Constraints)</em></p>
+        <ul>
+            <li>Identify the constraint</li>
+            <li>Exploit the constraint</li>
+            <li>Subordinate all other activities to the constraint</li>
+            <li>Elevate the constraint to new levels</li>
+            <li>Find the next constraint</li>
+        </ul>
+        <h5>Wait Time</h5>
+        <p>Wait time refers to how long we need to wait for access to a resource.</p>
+        <ul>
+            <li>If a resource is 50% busy, 50% idle, its wait time is 50/50 = 1 unit.</li>
+            <li>If a resource is 90% busy, 10% idle, its wait time is 90/10 = 9 units.</li>
+        </ul>
+        <p>So we can see resource usage is a power curve. Wait time increases exponentially as utilization increases.</p>
+        <p>Multiple handoffs? Multiply the wait times. 3 resources at 90%&mdash;27 units.</p>
+    </div>
+</div>
