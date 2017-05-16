@@ -11,17 +11,28 @@
 
 <body class="mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-color--primary">
+        <header class="custom-header mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
-                <p style="font-size:2em;">Blake Burgess // Software Developer</p>
-            </div>
-            <div class="mdl-layout__tab-bar">
-                <a href="index.html" class="mdl-layout__tab">Home</a>
-                <a href="about.html" class="mdl-layout__tab">About</a>
-                <a href="projects.html" class="mdl-layout__tab">Projects</a>
-                <a href="sitemap.html" class="mdl-layout__tab">Site Map</a>
+                <!-- Title -->
+                <h1 class="mdl-layout-title">Blake Burgess // Software Developer</h1>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="index.html" class="mdl-layout__tab">Home</a>
+                    <a class="mdl-navigation__link" href="about.html" class="mdl-layout__tab">About</a>
+                    <a class="mdl-navigation__link" href="projects.html" class="mdl-layout__tab">Projects</a>
+                    <a class="mdl-navigation__link" href="sitemap.html" class="mdl-layout__tab">Site Map</a>
+                </nav>
             </div>
         </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Blake Burgess</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html" class="mdl-layout__tab">Home</a>
+                <a class="mdl-navigation__link" href="about.html" class="mdl-layout__tab">About</a>
+                <a class="mdl-navigation__link" href="projects.html" class="mdl-layout__tab">Projects</a>
+                <a class="mdl-navigation__link" href="sitemap.html" class="mdl-layout__tab">Site Map</a>
+            </nav>
+        </div>
 
         <div class="mdl-layout__content" style="flex: 1 0 auto;">
             <div class="mdl-grid mdl-shadow--2dp">

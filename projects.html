@@ -11,17 +11,28 @@
 
 <body class="mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-color--primary">
+        <header class="custom-header mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
-                <p style="font-size:2em;">Blake Burgess // Software Developer</p>
-            </div>
-            <div class="mdl-layout__tab-bar">
-                <a href="index.html" class="mdl-layout__tab">Home</a>
-                <a href="about.html" class="mdl-layout__tab">About</a>
-                <a href="projects.html" class="mdl-layout__tab">Projects</a>
-                <a href="sitemap.html" class="mdl-layout__tab">Site Map</a>
+                <!-- Title -->
+                <h1 class="mdl-layout-title">Blake Burgess // Software Developer</h1>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="index.html" class="mdl-layout__tab">Home</a>
+                    <a class="mdl-navigation__link" href="about.html" class="mdl-layout__tab">About</a>
+                    <a class="mdl-navigation__link" href="projects.html" class="mdl-layout__tab">Projects</a>
+                    <a class="mdl-navigation__link" href="sitemap.html" class="mdl-layout__tab">Site Map</a>
+                </nav>
             </div>
         </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Blake Burgess</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html" class="mdl-layout__tab">Home</a>
+                <a class="mdl-navigation__link" href="about.html" class="mdl-layout__tab">About</a>
+                <a class="mdl-navigation__link" href="projects.html" class="mdl-layout__tab">Projects</a>
+                <a class="mdl-navigation__link" href="sitemap.html" class="mdl-layout__tab">Site Map</a>
+            </nav>
+        </div>
 
         <div class="mdl-layout__content" style="flex: 1 0 auto;">
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
@@ -71,10 +82,12 @@
         <h5>Material Design Lite</h5>
         <p>I enjoy frameworks that work "out-of-the-box". I&apos;ve had some success (well, you be the judge!) using Google&apos;s <a href="https://getmdl.io/index.html">Material Design Lite</a>. You&apos;re looking at it right now.</p>
         <p>As you can see, I just spam "cards". Might actually sort that out sometime.</p>
+        <p><em>16th May 2017:</em> Updated the header/navigation, using <a href="https://codepen.io/brandonhimpfen/pen/JdBype">Brandon&apos;s MDL header implementation</a>. One aspect of <abbr title="MDL: Material Design Lite">MDL</abbr> I think could be improved is the number of examples available.</p>
     </div>
     <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="build">build</a>
         <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="https://getmdl.io/index.html">Material Design Lite</a>
+        <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="https://codepen.io/brandonhimpfen/pen/JdBype">Brandon&apos;s MDL header implementation</a>
     </div>
 </div>
 </div>
